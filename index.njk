@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+---
+<h1 style="text-align:center;padding-left:30px;">Welcome to my site!</h1>
+<h3 style="padding-left:30px;">Last 5 posts</h3>
+{% set postslist = collections.posts | head(-5) %}
+{% set postslistCounter = collections.posts | length %}
+{% include "postslist.njk" %}

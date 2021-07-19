@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="true" />
+    <!-- SEO -->
+    <title>{{ title or metadata.title }}</title>
+    <meta name="title" content="{{ title or metadata.title }}">
+    <meta name="description" content="{{ description or metadata.description }}">
+    <meta name="author" content="{{ metadata.author.name }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url or metadata.url }}">
+    <meta property="og:title" content="{{ title or metadata.title }}">
+    <meta property="og:description" content="{{ description or metadata.description }}">
+    <meta property="og:image" content="">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url or metadata.url }}">
+    <meta property="twitter:title" content="{{ title or metadata.title }}">
+    <meta property="twitter:description" content="{{ description or metadata.description }}">
+    <meta property="twitter:image" content="">
+    <!-- Require external JS files -->
+    <script src="/js/halfmoon.js"></script>
+    <script src="/js/main.js"></script>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="manifest" href="/manifest.json" />
+    <!-- Require external CSS files -->
+    <link rel="stylesheet" href="/css/halfmoon.css" />
+    <link href="/css/prism.css" rel="stylesheet">
+    <!-- Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="canonical" href=".">
+{% if metadata.googleAnalyticsId !== "" %}
+<!-- Google Analytics-->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.googleAnalyticsId }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ metadata.googleAnalyticsId }}');
+</script>
+{% endif %}
+{% if metadata.facebookPixelId !== "" %}
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '{your-pixel-id-goes-here}');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" 
+       src="https://www.facebook.com/tr?id={your-pixel-id-goes-here}&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+{% endif %}
+</head>
+
+<body>
+    <!-- Page wrapper -->
+    <div class="page-wrapper">
+        <!-- Content wrapper with static navbars -->
+        <div class="content-wrapper">
+            <!-- Static navbar -->
+            <nav class="navbar">
+                <!-- Navbar content with toggle sidebar button -->
+                <div class="navbar-content">
+
+                </div>
+                <!-- Icon/brand -->
+                <a href="/" class="navbar-brand">
+                    <img src="{{ metadata.icon }}" alt="..." />{{ metadata.title }}
+                </a>
+                <!-- Navbar buttons -->
+                <ul class="navbar-nav d-none d-md-flex">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/posts" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ metadata.feed.path | url }}" class="nav-link">RSS</a>
+                    </li>
+                </ul>
+                <!-- Darkmode toggle -->
+                <div class="navbar-content ml-auto">
+                    <!-- ml-auto = margin-left: auto -->
+                    <button class="btn btn-primary" type="button" onclick="halfmoon.toggleDarkMode();">🌙</button>
+                </div>
+            </nav>
+            <!-- Start deleting! -->
+            <br>
+            <div class="container-fluid" style="padding-left:30px;padding-right:30px;">
+                <div class="alert alert-secondary filled-dm" role="alert">
+                    <h4 class="alert-heading">Welcome to Rocket11ty!</h4>
+                    <p>It's a decent blogging platform made with Halfmoon and 11ty.</p>
+                    <ul>
+                        <li>Change the values in <code class="code">_data/metadata.json</code> to your values.</li>
+                        <li>If you are hosting your site on Netlify and want to enable extra features like the contact form and NetlifyCMS, enable <a href="https://docs.netlify.com/visitor-access/git-gateway/#setup-and-settings">Git Gateway</a>, <a href="https://docs.netlify.com/visitor-access/identity/">Netlify Identity</a>,
+                            and <a href="https://www.netlify.com/docs/form-handling/">Netlify Forms</a> (should already enabled.)</li>
+                        <li>Delete this message in <code class="code">includes/layouts/base.njk</code> from <code class="code">Start deleting!</code> to <code class="code">Stop deleting! Happy Blogging!</code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <!-- Stop deleting! Happy Blogging! -->
+            <!-- Content -->
+            <div class="container-fluid">
+                {{ content | safe }}
+            </div>
+
+            <!-- Static bottom navbar -->
+            <nav class="navbar navbar-static-bottom">
+                <!-- Navbar text -->
+                <span class="navbar-text">
+                        &copy; <div id="year">2020</div>, {{ metadata.author.name }}. All rights reserved.
+                    </span>
+            </nav>
+        </div>
+    </div>
+</body>
+<footer>
+    <!-- Do halfmoon preffered theme -->
+    <script type="text/javascript">"light-mode"==halfmoon.getPreferredMode()||("dark-mode"==halfmoon.getPreferredMode()||"not-set"==halfmoon.getPreferredMode()&&{{ metadata.defaultDarkMode }})&&halfmoon.toggleDarkMode();</script>
+</footer>
+
+</html>

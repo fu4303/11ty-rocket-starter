@@ -1,0 +1,25 @@
+{
+  "title": "Rocket11ty",
+  "description": "Rocket11ty is a blog template for 11ty.",
+  "url": "",
+  "defaultDarkMode": "true",
+  "googleAnalyticsId": "",
+  "facebookPixelId": "",
+  "forceHTTPS": "true",
+  "icon": "https://cdn.glitch.com/f648f832-1dab-41a0-a2ec-8e3be00e552b%2F1F680_color.png?v=1602371731988",
+  "feed": {
+    "subtitle": "Rocket11ty is a blog template for 11ty.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://xn--158h.glitch.me/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://xn--158h.glitch.me/feed/feed.json"
+  },
+  "author": {
+    "name": "Rocket11ty",
+    "email": "youremailaddress@example.com",
+    "url": "https://xn--158h.glitch.me/about-me/"
+  }
+}

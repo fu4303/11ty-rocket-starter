@@ -1,0 +1,26 @@
+---
+permalink: /manifest.json
+eleventyExcludeFromCollections: true
+---
+{
+   "name":"{{ metadata.title }}",
+   "short_name":"{{ metadata.title }}",
+   "start_url": ".",
+   "description": "{{ metadata.description }}",
+   "icons":[
+      {
+         "src":"/img/android-chrome-192x192.png",
+         "sizes":"192x192",
+         "type":"image/png"
+      },
+      {
+         "src":"/img/android-chrome-512x512.png",
+         "sizes":"512x512",
+         "type":"image/png"
+      }
+   ],
+   "theme_color":"#25282c",
+   "background_color":"#25282c",
+   "display":"minimal-ui",
+   "related_applications": []
+}

@@ -1,0 +1,34 @@
+{
+  "name": "rocket11ty",
+  "version": "1.0.0",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve --port=3000",
+    "build": "npx @11ty/eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "luxon": "^1.27.0",
+    "markdown-it": "^12.0.0",
+    "markdown-it-anchor": "^7.1.0",
+    "html-minifier": "^4.0.0",
+    "eleventy-plugin-embed-everything": "^1.11.0",
+    "eleventy-charts": "^1.0.3"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://github.com/aboutDavid/rocket11ty"
+  },
+  "license": "MIT",
+  "keywords": [
+    "11ty",
+    "jamstack",
+    "rocket11ty"
+  ],
+  "devDependencies": {},
+  "author": "aboutDavid"
+}
