@@ -74,23 +74,7 @@
                     <button class="btn btn-primary" type="button" onclick="halfmoon.toggleDarkMode();">🌙</button>
                 </div>
             </nav>
-            <!-- Start deleting! -->
-            <br>
-            <div class="container-fluid" style="padding-left:30px;padding-right:30px;">
-                <div class="alert alert-secondary filled-dm" role="alert">
-                    <h4 class="alert-heading">Welcome to Rocket11ty!</h4>
-                    <p>It's a decent blogging platform made with Halfmoon and 11ty.</p>
-                    <ul>
-                        <li>Change the values in <code class="code">_data/metadata.json</code> to your values.</li>
-                        <li>If you are hosting your site on Netlify and want to enable extra features like the contact form and NetlifyCMS, enable <a href="https://docs.netlify.com/visitor-access/git-gateway/#setup-and-settings">Git Gateway</a>, <a href="https://docs.netlify.com/visitor-access/identity/">Netlify Identity</a>,
-                            and <a href="https://www.netlify.com/docs/form-handling/">Netlify Forms</a> (should already enabled.)</li>
-                        <li>Delete this message in <code class="code">includes/layouts/base.njk</code> from <code class="code">Start deleting!</code> to <code class="code">Stop deleting! Happy Blogging!</code>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <br>
-            <!-- Stop deleting! Happy Blogging! -->
+
             <!-- Content -->
             <div class="container-fluid">
                 {{ content | safe }}
